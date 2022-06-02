@@ -50,12 +50,12 @@ const path_1 = __importDefault(require("path"));
         else {
             dir = dir + name;
         }
+        console.log(dir);
+        console.log(path_1.default.join(__dirname, dir));
         fs_1.default.mkdirSync(path_1.default.join(__dirname, dir), { recursive: true });
         yield ncp(path_1.default.join(__dirname, `./template/`), dir);
         //SET package.json
-        let fileContent = fs_1.default
-            .readFileSync(dir + "/package.json", "utf8")
-            .toString();
+        let fileContent = fs_1.default.readFileSync(dir + "/package.json", "utf8").toString();
         let template = fileContent.replace(new RegExp(`(\{\{PROJECT_NAME\}\}|\{\{ PROJECT_NAME \}\})`, "g"), '"' + name + '"');
         fs_1.default.writeFileSync(dir + "/package.json", template);
         //SET .cracorc.js

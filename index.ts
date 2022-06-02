@@ -40,16 +40,16 @@ import path from "path";
     } else {
         dir = dir + name;
     }
-    
 
-    fs.mkdirSync(path.join(__dirname, dir), { recursive: true });
+    console.log(dir);
+
+    console.log(path.join(__dirname, dir));
+    fs.mkdirSync(dir, { recursive: true });
 
     await ncp(path.join(__dirname, `./template/`), dir);
 
     //SET package.json
-    let fileContent = fs
-        .readFileSync(dir + "/package.json", "utf8")
-        .toString();
+    let fileContent = fs.readFileSync(dir + "/package.json", "utf8").toString();
     let template = fileContent.replace(
         new RegExp(`(\{\{PROJECT_NAME\}\}|\{\{ PROJECT_NAME \}\})`, "g"),
         '"' + name + '"'
