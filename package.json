@@ -1,25 +1,27 @@
 {
-  "name": "cra-craco-mf",
-  "version": "1.0.1",
-  "description": "",
-  "bin": "./index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/RamRam-V/cra-craco-mf"
-  },
-  "scripts": {
-    "start": "babel-node --presets @babel/env index.js"
-  },
-  "author": "ramramv",
-  "license": "MIT",
-  "devDependencies": {
-    "@babel/cli": "^7.17.10",
-    "@babel/core": "^7.18.2",
-    "@babel/node": "^7.17.10",
-    "@babel/preset-env": "^7.18.2"
-  },
-  "dependencies": {
-    "inquirer": "^8.2.4",
-    "ncp": "^2.0.0"
-  }
+    "name": "cra-craco-mf",
+    "version": "1.0.2",
+    "description": "",
+    "bin": {
+        "cra-craco-mf": "./index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RamRam-V/cra-craco-mf"
+    },
+    "scripts": {
+        "start": "babel-node --presets @babel/env index.js"
+    },
+    "author": "ramramv",
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/cli": "^7.17.10",
+        "@babel/core": "^7.18.2",
+        "@babel/node": "^7.17.10",
+        "@babel/preset-env": "^7.18.2"
+    },
+    "dependencies": {
+        "inquirer": "^8.2.4",
+        "ncp": "^2.0.0"
+    }
 }
