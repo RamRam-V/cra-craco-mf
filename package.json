@@ -1,17 +1,17 @@
 {
     "name": "cra-craco-mf",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "",
     "bin": {
-        "cra-craco-mf": "./build/index.js"
+        "cra-craco-mf": ".index.js"
     },
     "repository": {
         "type": "git",
         "url": "https://github.com/RamRam-V/cra-craco-mf"
     },
     "scripts": {
-        "prepublish": "babel index.js -d ./build",
-        "start": "babel-node --presets @babel/env index.js"
+        "start": "tsc && node index.js",
+        "build": "tsc"
     },
     "author": "ramramv",
     "license": "MIT",
@@ -19,7 +19,9 @@
         "@babel/cli": "^7.17.10",
         "@babel/core": "^7.18.2",
         "@babel/node": "^7.17.10",
-        "@babel/preset-env": "^7.18.2"
+        "@babel/preset-env": "^7.18.2",
+        "@types/inquirer": "^8.2.1",
+        "typescript": "^4.7.2"
     },
     "dependencies": {
         "inquirer": "^8.2.4",
