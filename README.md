@@ -5,7 +5,8 @@ This will create boilerplate project for module federation based on creat-react-
 ```npx cra-craco-mf```
 
 # PROMPT
-![image](https://user-images.githubusercontent.com/22585023/171556640-26bbdd62-b044-4f95-b333-00f3af246160.png)<br>
+![image](https://user-images.githubusercontent.com/22585023/171565096-6ecf762a-8eae-40f6-b003-43144be024a7.png)<br>
+
 
 # RESULT
-![image](https://user-images.githubusercontent.com/22585023/171556673-fae07216-5a2a-46e5-9c1a-af3fede5b9a4.png) <br>
+![image](https://user-images.githubusercontent.com/22585023/171565130-3b9b87ce-7d3f-472e-85ad-187b50919301.png) <br>
