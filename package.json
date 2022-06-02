@@ -1,9 +1,9 @@
 {
     "name": "cra-craco-mf",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "description": "",
     "bin": {
-        "cra-craco-mf": ".index.js"
+        "cra-craco-mf": "./index.js"
     },
     "repository": {
         "type": "git",

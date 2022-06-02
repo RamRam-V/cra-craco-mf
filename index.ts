@@ -1,5 +1,3 @@
-#! /usr/bin/env node
-
 import inquirer from "inquirer";
 
 import util from "util";
