@@ -12,6 +12,12 @@ import path from "path";
     const answers = await inquirer.prompt([
         {
             type: "input",
+            message: "enter destination folder:",
+            name: "dir",
+            default: "./",
+        },
+        {
+            type: "input",
             message: "Pick the name of your app:",
             name: "name",
             default: "host",
@@ -24,25 +30,34 @@ import path from "path";
         },
     ]);
 
+    let { dir, name, port } = answers;
 
-    console.log(answers);
-    const { name, port } = answers;
-    await ncp(path.join(__dirname, `./template/`), name);
+    if (dir.length - 1 !== dir.lastIndexOf("/")) {
+        // dir = dir.split("/");
+        // dir.pop();
+        // dir = dir.join("/");
+        dir = dir + "/" + name;
+    } else {
+        dir = dir + name;
+    }
+    
+
+    fs.mkdirSync(path.join(__dirname, dir), { recursive: true });
+
+    await ncp(path.join(__dirname, `./template/`), dir);
 
     //SET package.json
     let fileContent = fs
-        .readFileSync(name + "/package.json", "utf8")
+        .readFileSync(dir + "/package.json", "utf8")
         .toString();
-        let template = fileContent.replace(
+    let template = fileContent.replace(
         new RegExp(`(\{\{PROJECT_NAME\}\}|\{\{ PROJECT_NAME \}\})`, "g"),
         '"' + name + '"'
     );
-    fs.writeFileSync(name + "/package.json", template);
+    fs.writeFileSync(dir + "/package.json", template);
 
     //SET .cracorc.js
-    fileContent = fs
-        .readFileSync(name + "/.cracorc.js", "utf8")
-        .toString();
+    fileContent = fs.readFileSync(dir + "/.cracorc.js", "utf8").toString();
     template = fileContent.replace(
         new RegExp(`(\{\{PROJECT_NAME\}\}|\{\{ PROJECT_NAME \}\})`, "g"),
         '"' + name + '"'
@@ -52,5 +67,5 @@ import path from "path";
         port
     );
 
-    fs.writeFileSync(name + "/.cracorc.js", template);
+    fs.writeFileSync(dir + "/.cracorc.js", template);
 })();
