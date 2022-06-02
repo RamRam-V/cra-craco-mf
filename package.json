@@ -3,13 +3,14 @@
     "version": "1.0.5",
     "description": "",
     "bin": {
-        "cra-craco-mf": "./index.js"
+        "cra-craco-mf": "./build/index.js"
     },
     "repository": {
         "type": "git",
         "url": "https://github.com/RamRam-V/cra-craco-mf"
     },
     "scripts": {
+        "prepublish": "babel index.js -d ./build",
         "start": "babel-node --presets @babel/env index.js"
     },
     "author": "ramramv",
