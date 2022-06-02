@@ -22,6 +22,8 @@ import path from "path";
         },
     ]);
 
+    #! /usr/bin/env node
+
     console.log(answers);
     const { name, port } = answers;
     await ncp(path.join(__dirname, `./template/`), name);
