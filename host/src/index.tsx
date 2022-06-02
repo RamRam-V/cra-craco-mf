@@ -1,3 +1,0 @@
-import("./bootstarp");
-
-export default {};
