@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 import inquirer from "inquirer";
 
 import util from "util";
@@ -22,7 +24,6 @@ import path from "path";
         },
     ]);
 
-    #! /usr/bin/env node
 
     console.log(answers);
     const { name, port } = answers;
