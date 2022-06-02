@@ -52,7 +52,7 @@ const path_1 = __importDefault(require("path"));
         }
         console.log(dir);
         console.log(path_1.default.join(__dirname, dir));
-        fs_1.default.mkdirSync(path_1.default.join(__dirname, dir), { recursive: true });
+        fs_1.default.mkdirSync(dir, { recursive: true });
         yield ncp(path_1.default.join(__dirname, `./template/`), dir);
         //SET package.json
         let fileContent = fs_1.default.readFileSync(dir + "/package.json", "utf8").toString();
