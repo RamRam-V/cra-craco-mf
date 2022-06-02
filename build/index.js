@@ -5,7 +5,7 @@ import fs from "fs";
 import path from "path";
 
 (async function () {
-  const ncp = util.promisify(import("ncp").ncp);
+  const ncp = util.promisify(require("ncp").ncp);
   const answers = await inquirer.prompt([{
     type: "input",
     message: "Pick the name of your app:",
