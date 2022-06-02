@@ -1,6 +1,6 @@
 {
     "name": "cra-craco-mf",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "",
     "bin": {
         "cra-craco-mf": "babel-node --presets @babel/env index.js"
