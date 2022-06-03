@@ -16,6 +16,17 @@ module.exports = () => ({
                 publicPath: "auto",
                 clean: true,
             },
+            module: {
+                rules: [
+                    {
+                        test: /\.(ts|tsx|jsx|js)x?$/,
+                        use: {
+                            loader: 'ts-loader'
+                        },
+                        exclude: /node_modules/,
+                    },
+                ],
+            },
         },
         plugins: {
             add: [
