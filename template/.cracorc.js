@@ -25,8 +25,16 @@ module.exports = () => ({
                 new ModuleFederationPlugin({
                     name: {{PROJECT_NAME}},
                     filename: "remoteEntry.js",
-                    remotes:{},
-                    exposes: {},
+                    remotes: {
+                        /*
+                           Play: `Play@${process.env.REACT_APP_REMOTE_HOST || 'http://localhost:3001'}/remoteEntry.js`,
+                        */
+                    },
+                    exposes: {
+                        /*
+                            "./Play": "./src/Play",
+                        */
+                    },
                     shared: {
                         ...deps,
                         ui: { singleton: true },
