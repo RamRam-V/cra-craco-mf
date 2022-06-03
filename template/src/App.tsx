@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Play from "./Play";
 
 function App() {
   return (
@@ -17,8 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn MFE
-          <Play/>
+          Let's Learn MFE!
         </a>
       </header>
     </div>
